@@ -1,0 +1,15 @@
+.link {
+  text-decoration: none;
+
+  &--primary {
+    color: $primary;
+  }
+
+  &--secondary {
+    color: $secondary;
+  }
+
+  &--lg {
+    font-size: (26 / 16) + rem;
+  }
+}

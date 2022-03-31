@@ -1,0 +1,31 @@
+@mixin h1-font {
+  font-size: 3rem;
+}
+
+@mixin h2-font {
+  font-size: 2.56rem;
+}
+
+@mixin h3-font {
+  font-size: 2.22rem;
+}
+
+@mixin h4-font {
+  font-size: 1.78rem;
+}
+
+@mixin h5-font {
+  font-size: 1.33rem;
+}
+
+@mixin h6-font {
+  font-size: 1rem;
+}
+
+@mixin p-font {
+  font-size: 1rem;
+}
+
+@mixin sub-font {
+  font-size: 0.78rem;
+}

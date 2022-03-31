@@ -1,0 +1,72 @@
+.btn {
+  display: inline-block;
+  min-width: (170 / 12) + rem;
+  height: (34 / 12) + rem;
+
+  transition: background-color 0.5s ease-in-out;
+
+  border-width: 0;
+  border-radius: (40 / 16) + rem;
+
+  font-family: inherit;
+  font-size: (14 / 12) + rem;
+  font-weight: 500;
+  line-height: (34 / 12) + rem;
+
+  @include sm-block {
+    min-width: (225 / 16) + rem;
+    height: (45 / 16) + rem;
+
+    font-size: 1rem;
+    line-height: (45 / 16) + rem;
+  }
+
+  @include lg-block {
+    min-width: (280 / 16) + rem;
+    height: (56 / 16) + rem;
+
+    line-height: (56 / 16) + rem;
+  }
+
+  &--lg {
+    min-width: (170 / 12) + rem;
+
+    font-size: (14 / 12) + rem;
+    line-height: (34 / 12) + rem;
+
+    @include sm-block {
+      min-width: (310 / 16) + rem;
+      height: (64 / 16) + rem;
+
+      font-size: (26 / 16) + rem;
+      line-height: (64 / 16) + rem;
+    }
+
+    @include xl-block {
+      min-width: (380 / 16) + rem;
+      height: (76 / 16) + rem;
+
+      font-size: 2rem;
+
+      line-height: (76 / 16) + rem;
+    }
+  }
+
+  &--primary {
+    background-color: $btn-primary;
+    box-shadow: 0 10px 30px transparentize(#11276a, 0.7);
+
+    color: $secondary;
+  }
+
+  &--accent {
+    background-color: $btn-accent;
+    box-shadow: 0 2px 16px transparentize(#001e24, 0.7);
+
+    color: $secondary;
+  }
+
+  &:hover {
+    background-color: $btn-hover;
+  }
+}

@@ -1,0 +1,23 @@
+.container {
+  width: 94rem;
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 2rem;
+  padding-left: 2rem;
+
+  @include xs-block {
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+
+  @include lg-block {
+    padding-right: 8rem;
+    padding-left: 8rem;
+  }
+
+  @include xl-block {
+    padding-right: 10rem;
+    padding-left: 10rem;
+  }
+}

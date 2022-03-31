@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'CentraNo1';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./fonts/CentraNo1-Bold.woff2') format('woff2'), url('./fonts/CentraNo1-Bold.woff') format('woff');
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CentraNo1';
+  font-style: italic;
+  font-weight: 700;
+  src:
+    url('./fonts/CentraNo1-BoldItalic.woff2') format('woff2'),
+    url('./fonts/CentraNo1-BoldItalic.woff') format('woff');
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CentraNo1';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./fonts/CentraNo1-Medium.woff2') format('woff2'), url('./fonts/CentraNo1-Medium.woff') format('woff');
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CentraNo1';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/CentraNo1-Book.woff2') format('woff2'), url('./fonts/CentraNo1-Book.woff') format('woff');
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CentraNo1';
+  font-style: normal;
+  font-weight: 300;
+  src: url('./fonts/CentraNo1-Light.woff2') format('woff2'), url('./fonts/CentraNo1-Light.woff') format('woff');
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'handsomeregular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/handsomeregular.woff2') format('woff2'), url('./fonts/handsomeregular.woff') format('woff');
+
+  font-display: swap;
+}
