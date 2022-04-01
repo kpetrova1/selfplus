@@ -42,16 +42,16 @@
 
 @include md-block {
   .slide-in-right.is-in-view {
-    animation: slide-in-right 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
+    animation: slide-in-right 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
   }
 
   .slide-in-bottom.is-in-view {
-    animation: slide-in-bottom 0.8s cubic-bezier(1, 0, 0, 1) both;
+    animation: slide-in-bottom 1s cubic-bezier(1, 0, 0, 1) both;
   }
 
   .scale-in-center.is-in-view {
     transform: scale(0);
-    animation: scale-in-center 0.8s cubic-bezier(1, 0, 0, 1) both;
+    animation: scale-in-center 1s cubic-bezier(1, 0, 0, 1) both;
   }
 
   .is-in-view {
