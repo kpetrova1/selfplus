@@ -1,7 +1,8 @@
 $xs: 375px;
 $sm: 676px;
 $md: 768px;
-$lg: 1024px;
+$tb: 1024px;
+$lg: 1200px;
 $xl: 1460px;
 
 @mixin xs($name, $value) {
@@ -36,6 +37,18 @@ $xl: 1460px;
 
 @mixin md-block() {
   @media screen and (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin tb($name, $value) {
+  @media screen and (min-width: $tb) {
+    #{$name}: $value;
+  }
+}
+
+@mixin tb-block() {
+  @media screen and (min-width: $tb) {
     @content;
   }
 }

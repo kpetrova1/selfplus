@@ -11,8 +11,14 @@
     padding-bottom: 5rem;
   }
 
-  @include xl-block {
+  @include lg-block {
     flex-direction: row;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    column-gap: 4rem;
+  }
+
+  @include xl-block {
     padding-top: 7.5rem;
     padding-bottom: 9rem;
     column-gap: 7rem;
@@ -30,7 +36,7 @@
     }
   }
 
-  @include xl-block {
+  @include lg-block {
     &:nth-child(2) {
       align-self: self-start;
     }

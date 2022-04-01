@@ -3,11 +3,15 @@
 
   background-image: $bg-gradient-2;
 
-  @include lg-block {
-    padding-top: (190 / 16) + rem;
-    padding-bottom: (115 / 16) + rem;
+  @include md-block {
+    padding-top: (80 / 16) + rem;
+    padding-bottom: (80 / 16) + rem;
 
     background-image: $bg-gradient-1;
+  }
+
+  @include tb-block {
+    padding-top: (150 / 16) + rem;
   }
 
   @include xl-block {
@@ -20,7 +24,7 @@
   @include flex(flex, null, null, column-reverse);
   column-gap: (24 / 16) + rem;
 
-  @include lg-block {
+  @include md-block {
     flex-direction: row;
   }
 }
@@ -34,11 +38,11 @@
 
   text-align: center;
 
-  @include from-to($lg, $xl) {
+  @include from-to($md, $tb) {
     width: 60%;
   }
 
-  @include lg-block {
+  @include md-block {
     align-items: self-start;
     padding-top: 2rem;
     padding-bottom: 1.5rem;
@@ -61,12 +65,12 @@
       margin-left: -2rem;
     }
 
-    @include to($lg) {
+    @include to($md) {
       width: calc(100% + 6rem);
       margin-left: -3rem;
     }
 
-    @include from-to($lg, $xl) {
+    @include from-to($md, $tb) {
       position: absolute;
       top: 0;
       right: 0;
@@ -78,23 +82,31 @@
       }
     }
 
-    @include xl-block {
-      width: 17rem;
+    @include tb-block {
+      width: 15rem;
 
       img {
         object-position: 75%;
       }
+    }
+
+    @include xl-block {
+      width: 17rem;
     }
   }
 
   &--right {
     display: none;
 
-    @include xl-block {
+    @include lg-block {
       display: block;
-      width: 15rem;
+      width: 12rem;
       padding-top: 4rem;
       padding-bottom: 4rem;
+    }
+
+    @include xl-block {
+      width: 15rem;
     }
   }
 }
@@ -107,7 +119,7 @@
 
   text-transform: lowercase;
 
-  @include to($lg) {
+  @include to($md - 1px) {
     padding: 1rem 2rem;
 
     background-image: url("data:image/svg+xml,%3Csvg width='185' height='32' viewBox='0 0 185 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M175.464 4.66668C169.041 2.97087 163.213 2.29058 155.404 1.99358C145.717 1.62519 135.815 1.27471 125.984 1.36801C103.675 1.57972 81.4614 2.2994 59.3531 4.69079C40.6838 6.71019 18.2444 9.47519 4.6695 15.8108C-6.79432 21.1611 11.4405 25.9607 21.7086 27.2209C47.6127 30.4002 77.0779 31.3489 104.762 30.7652C119.608 30.4522 135.304 29.3906 149.783 27.461C160.217 26.0704 171.131 24.3525 179.242 21.0604C193.161 15.4101 172.506 10.8133 161.708 9.47452C137.84 6.5152 111.934 7.45133 86.887 9.82834' stroke='%237699EE' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A");
@@ -136,11 +148,11 @@
   font-size: (25 / 12) + rem;
   font-weight: 700;
 
-  @include from-to($lg, $xl) {
+  @include from-to($md, $tb) {
     width: 106%;
   }
 
-  @include lg-block {
+  @include md-block {
     margin-top: (40 / 16) + rem;
 
     font-size: (45 / 16) + rem;
@@ -159,7 +171,7 @@
   font-size: (14 / 12) + rem;
   line-height: (18 / 12) + rem;
 
-  @include to($lg) {
+  @include to($md - 1px) {
     &::before {
       content: '';
 
@@ -176,7 +188,7 @@
     }
   }
 
-  @include lg-block {
+  @include tb-block {
     margin-top: (48 / 16) + rem;
 
     font-size: (18 / 16) + rem;

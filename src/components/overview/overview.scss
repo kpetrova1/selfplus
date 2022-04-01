@@ -34,7 +34,7 @@
 
   transform: translateX(-50%) rotate(-40deg);
 
-  @include lg-block {
+  @include tb-block {
     top: -5rem;
     right: -5rem;
     left: auto;

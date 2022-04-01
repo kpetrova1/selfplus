@@ -21,7 +21,7 @@
     line-height: (45 / 16) + rem;
   }
 
-  @include lg-block {
+  @include tb-block {
     min-width: (280 / 16) + rem;
     height: (56 / 16) + rem;
 
