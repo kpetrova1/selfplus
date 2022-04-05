@@ -1218,7 +1218,7 @@ section {
 
   .nav-dots {
     display: block;
-    right: 6rem;
+    right: 5rem;
   }
 
   .intro__media--left {
@@ -1327,6 +1327,10 @@ section {
     right: 8rem;
   }
 
+  .nav-dots li + li {
+    margin-top: 1.125rem;
+  }
+
   .nav-dots__item {
     width: 1.3125rem;
     height: 1.3125rem;
@@ -1425,7 +1429,7 @@ section {
 
 @media (min-width: 1500px) {
   .nav-dots {
-    right: calc((100% - 1460px) / 2 - 1rem);
+    right: calc((100% - 1460px) / 2 + 2rem);
   }
 }
 

@@ -12,7 +12,7 @@
 
   @include tb-block {
     display: block;
-    right: 6rem;
+    right: 5rem;
   }
 
   @include xl-block {
@@ -20,11 +20,15 @@
   }
 
   @media (min-width: 1500px) {
-    right: calc((100% - #{$xl}) / 2 - 1rem);
+    right: calc((100% - #{$xl}) / 2 + 2rem);
   }
 
   li + li {
     margin-top: (10 / 16) + rem;
+
+    @include xl-block {
+      margin-top: (18 / 16) + rem;
+    }
   }
 }
 
