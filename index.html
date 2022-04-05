@@ -22,19 +22,41 @@
 </header>
 
 <main>
-    <section class="intro">
+    <ul class="nav-dots">
+  <li>
+    <a class="nav-dots__item" href="#intro" data-number="1"> </a>
+  </li>
+  <li>
+    <a class="nav-dots__item" href="#services" data-number="2"> </a>
+  </li>
+  <li>
+    <a class="nav-dots__item" href="#steps" data-number="3"> </a>
+  </li>
+  <li>
+    <a class="nav-dots__item" href="#tabs" data-number="4"> </a>
+  </li>
+  <li>
+    <a class="nav-dots__item" href="#advantages" data-number="5"> </a>
+  </li>
+</ul>
+
+    <section class="intro" id="intro">
   <div class="intro__container container">
     <div class="intro__info">
-      <p class="intro__slogan">
-        <span>THERE'S YOUR SELF.</span>
-        <span class="intro__slogan-accent">AND THERE'S YOUR SELF+</span>
-      </p>
-      <h1 class="intro__title">Content Monetization for Experts and Coaches in Wellness</h1>
-      <p class="intro__text">
-        Reach out and connect with a global audience of followers, and turn your expertise into a profitable,
-        sustainable and mentally rewarding business.
-      </p>
-      <button class="intro__btn btn btn--primary in-view-watcher scale-in-center delay-4" type="button">Join now</button>
+      <div>
+          <p class="intro__slogan">
+              <span>There's your self.</span>
+              <span class="intro__slogan-accent">And there's your Self+</span>
+          </p>
+          <h1 class="intro__title">Content Monetization for Experts and Coaches in Wellness</h1>
+          <p class="intro__text">
+              Reach out and connect with a global audience of followers, and turn your expertise into a profitable,
+              sustainable and mentally rewarding business.
+          </p>
+      </div>
+      <div class="intro__btn">
+        <button class="btn btn--primary in-view-watcher scale-in-center delay-4" type="button">Join now</button>
+      </div>
     </div>
     <div class="intro__media intro__media--left in-view-watcher slide-in-right">
 <picture><source srcset="assets/intro-1.webp" type="image/webp"><source srcset="assets/intro-1.jpg" type="image/jpeg"><img src="assets/intro-1.jpg" alt="" /></picture>
@@ -45,7 +67,8 @@
   </div>
 </section>
 
-    <section class="services container">
+   <section id="services">
+       <div class="services container">
   <div class="services__item service in-view-watcher scale-in-center">
     <img class="service__icon" src="assets/icons/money.svg" alt="" />
     <h3 class="service__title">Get a Steady Income</h3>
@@ -70,9 +93,9 @@
       take care of your daily chores, while you dash into a better, brighter, and wealthier future.
     </p>
   </div>
-</section>
+</div>
 
-    <section class="overview">
+       <div class="overview">
   <div class="container">
     <div class="overview__img">
 <picture><source srcset="assets/overview.webp" type="image/webp"><source srcset="assets/overview.jpg" type="image/jpeg"><img src="assets/overview.jpg" alt="" /></picture>
@@ -93,9 +116,10 @@
       </svg>
     </div>
   </div>
-</section>
+</div>
 
-    <section class="steps">
+   </section>
+    <section class="steps" id="steps">
   <div class="steps__container container">
     <h2 class="steps__title in-view-watcher scale-in-center">
       <span class="steps__accent-title">Easy</span> as it should be:
@@ -123,8 +147,8 @@
     </div>
 </section>
 
-    <section class="tabs">
-  <div class="container">
+    <section class="tabs" id="tabs">
+  <div class="tabs__container container">
     <h2 class="tabs__title">Partnership <span class="tabs__title-accent">Perks</span></h2>
     <div class="tabs__content in-view-watcher slide-in-right">
       <div class="tab-img tab-img--active" data-tab="1">
@@ -188,7 +212,7 @@
   </div>
 </section>
 
-    <section class="advantages container">
+    <section class="advantages container" id="advantages">
   <h2 class="advantages__title">Claim the Best Spot!
   <span class="advantages__title-bg">
     <img src="assets/title-bg.svg" alt="" />
