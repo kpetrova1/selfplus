@@ -1,6 +1,6 @@
 .advantages {
-  padding-top: (55 / 12) + rem;
-  padding-bottom: (55 / 12) + rem;
+  padding-top: (55 / 16) + rem;
+  padding-bottom: (55 / 16) + rem;
 
   text-align: center;
 
@@ -10,7 +10,7 @@
   }
 
   @include xl-block {
-    padding-top: (250 / 16) + rem;
+    padding-top: 13rem;
     padding-bottom: (250 / 16) + rem;
   }
 }
@@ -20,7 +20,7 @@
   position: relative;
   margin-bottom: 1.5rem;
 
-  font-size: (25 / 12) + rem;
+  font-size: (25 / 16) + rem;
   font-weight: 400;
 
   @include md-block {
@@ -35,9 +35,9 @@
 .advantages__title-bg {
   position: absolute;
   z-index: -1;
-  top: -2rem;
+  top: -1.5rem;
   right: -3rem;
-  width: 14rem;
+  width: 11rem;
   height: 6rem;
 
   @include md-block {
@@ -56,9 +56,11 @@
 }
 
 .advantages__subtitle {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 
   @include md-block {
+    margin-bottom: 6rem;
+
     font-size: (25 / 16) + rem;
   }
 }
@@ -96,7 +98,7 @@
 .advantage__title {
   margin-top: 0.5rem;
 
-  font-size: (16 / 12) + rem;
+  font-size: (16 / 16) + rem;
   font-weight: 400;
 
   @include md-block {
@@ -113,9 +115,9 @@
 }
 
 .advantages__btn {
-  margin-top: (35 / 12) + rem;
+  margin-top: (35 / 16) + rem;
 
   @include md-block {
-    margin-top: (120 / 16) + rem;
+    margin-top: 8rem;
   }
 }

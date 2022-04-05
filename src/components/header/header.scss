@@ -12,6 +12,6 @@
 
   &__container {
     @include flex(flex, center, space-between);
-    padding-top: (30 / 16) + rem;
+    padding-top: 2.5rem;
   }
 }

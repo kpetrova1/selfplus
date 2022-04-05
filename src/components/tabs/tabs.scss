@@ -1,24 +1,25 @@
 .tabs {
-  padding-top: 1.5rem;
-  padding-bottom: 4.5rem;
-
   background-image: $bg-gradient-4;
 
   text-align: center;
 
   @include md-block {
-    padding-top: 3.5rem;
-    padding-bottom: 4rem;
-
     background-color: $bg-secondary-2;
     background-image: none;
 
     text-align: left;
   }
+}
 
-  @include xl-block {
-    padding-top: 5.5rem;
-    padding-bottom: 5.5rem;
+.tabs__container {
+  @include flex(flex, flex-start, null, column);
+  min-height: 100vh;
+  padding-top: 0.5rem;
+  padding-bottom: 5rem;
+
+  @include md-block {
+    padding-top: 3.5rem;
+    padding-bottom: 6rem;
   }
 }
 
@@ -29,17 +30,22 @@
 
   background-image: url("data:image/svg+xml,%3Csvg width='57' height='57' viewBox='0 0 57 57' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 32.6804C3.8192 22.6748 3.21923 12.1404 4.66786 2' stroke='%236A8AE8' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M20.6748 40.0169C23.834 35.3659 27.574 31.5855 31.198 27.3446C32.2549 26.1077 34.0042 24.6965 34.6811 23.3428' stroke='%236A8AE8' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M28.6777 54.6902C34.0371 53.7445 39.2662 52.4803 44.6478 51.6889C47.9969 51.1964 51.5245 51.0764 54.6893 50.0215' stroke='%236A8AE8' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E%0A");
   background-repeat: no-repeat;
-  background-position: 100% calc(-100% + 4rem);
-  background-size: 3rem;
+  background-position: calc(100% + -1rem) calc(-100% + 5rem);
+  background-size: 2rem;
 
-  font-size: (25 / 12) + rem;
+  font-size: (25 / 16) + rem;
   text-align: center;
 
   @include md-block {
-    background-size: auto;
+    background-position: 100% calc(-100% + 5rem);
+    background-size: 3rem;
 
     font-size: (45 / 16) + rem;
     text-align: left;
+  }
+
+  @include tb-block {
+    background-size: auto;
   }
 
   @include xl-block {
@@ -53,24 +59,32 @@
 
 .tabs__content {
   @include flex(flex, center, center, column);
-  margin-top: 3rem;
+  width: 100%;
+  margin-top: 2rem;
   column-gap: 2rem;
 
   @include md-block {
     flex-direction: row;
-    margin-top: 2rem;
+    align-items: initial;
+    margin-top: 4rem;
+  }
+
+  @include tb-block {
+    margin-left: -5rem;
   }
 
   @include xl-block {
-    column-gap: 7rem;
+    padding-right: 4rem;
+    column-gap: 6rem;
   }
 }
 
 .tab-img {
+  position: relative;
   flex-shrink: 0;
 
   @include to($md - 1px) {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 
     @for $i from 1 through 4 {
       &:nth-child(#{$i}) {
@@ -82,10 +96,19 @@
   @include md-block {
     display: none;
     width: 50%;
-    padding-top: 2rem;
 
     &--active {
       display: block;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      object-fit: contain;
     }
   }
 }
@@ -95,6 +118,21 @@
 
   @include md-block {
     display: block;
+  }
+}
+
+.tabs__btn {
+  align-self: center;
+  margin-top: 3rem;
+
+  text-align: center;
+
+  @include from($tb + 1px) {
+    margin-top: auto;
+  }
+
+  @media (min-height: 700px) and (min-width: 1025px) {
+    margin-top: 5rem;
   }
 }
 
@@ -118,7 +156,7 @@
     content: attr(data-num);
 
     font-family: 'handsomeregular', sans-serif;
-    font-size: (24 / 12) + rem;
+    font-size: (24 / 16) + rem;
 
     @include to($md) {
       color: $accent;
@@ -139,13 +177,15 @@
 }
 
 .tab__btn {
+  padding: 0;
+
   border-width: 0;
 
   background-color: transparent;
 
   color: $accent;
   font-family: inherit;
-  font-size: (16 / 12) + rem;
+  font-size: (16 / 16) + rem;
   font-weight: 700;
   text-align: left;
 
@@ -168,6 +208,9 @@
     color: $accent;
     font-weight: 700;
 
+    cursor: default;
+    pointer-events: none;
+
     @include md-block {
       color: $accent;
       font-size: (30 / 16) + rem;
@@ -187,21 +230,13 @@
   @include md-block {
     display: none;
     margin-bottom: 3rem;
+
+    line-height: 1.8;
   }
 
   ul {
     margin: 2rem 0 0;
     padding: 0;
     list-style-type: none;
-  }
-}
-
-.tabs__btn {
-  margin-top: 3rem;
-
-  text-align: center;
-
-  @include md-block {
-    margin-top: 5rem;
   }
 }

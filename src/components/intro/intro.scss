@@ -3,20 +3,19 @@
 
   background-image: $bg-gradient-2;
 
+  @media (min-height: 700px) and (min-width: 768px) {
+    height: 100vh;
+  }
+
   @include md-block {
-    padding-top: (80 / 16) + rem;
-    padding-bottom: (80 / 16) + rem;
+    padding-top: 10rem;
+    padding-bottom: 5rem;
 
     background-image: $bg-gradient-1;
   }
 
-  @include tb-block {
-    padding-top: (150 / 16) + rem;
-  }
-
   @include xl-block {
-    padding-top: 10rem;
-    padding-bottom: 4.5rem;
+    padding-bottom: 8rem;
   }
 }
 
@@ -26,26 +25,29 @@
 
   @include md-block {
     flex-direction: row;
+    height: 100%;
   }
 }
 
 .intro__info {
-  @include flex(flex, center, null, column);
   position: relative;
   z-index: 1;
-  padding-top: 3.5rem;
+  height: 100%;
+  padding-top: 2rem;
   padding-bottom: 3.5rem;
 
   text-align: center;
+
+  @include flex(flex, null, space-around, column);
 
   @include from-to($md, $tb) {
     width: 60%;
   }
 
   @include md-block {
-    align-items: self-start;
-    padding-top: 2rem;
-    padding-bottom: 1.5rem;
+    align-self: center;
+    padding-top: 0;
+    padding-bottom: 0;
 
     text-align: left;
   }
@@ -63,6 +65,10 @@
     @include to($xs - 1px) {
       width: calc(100% + 4rem);
       margin-left: -2rem;
+    }
+
+    @include to($md - 1px) {
+      height: 20rem;
     }
 
     @include to($md) {
@@ -112,25 +118,26 @@
 }
 
 .intro__slogan {
-  font-size: (14 / 12) + rem;
+  font-size: (14 / 16) + rem;
   font-style: italic;
   font-weight: 700;
-  line-height: (18 / 12) + rem;
 
-  text-transform: lowercase;
+  @include to($sm - 1px) {
+    background-position: center 1.8rem;
+    background-size: auto;
+  }
 
   @include to($md - 1px) {
     padding: 1rem 2rem;
 
     background-image: url("data:image/svg+xml,%3Csvg width='185' height='32' viewBox='0 0 185 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M175.464 4.66668C169.041 2.97087 163.213 2.29058 155.404 1.99358C145.717 1.62519 135.815 1.27471 125.984 1.36801C103.675 1.57972 81.4614 2.2994 59.3531 4.69079C40.6838 6.71019 18.2444 9.47519 4.6695 15.8108C-6.79432 21.1611 11.4405 25.9607 21.7086 27.2209C47.6127 30.4002 77.0779 31.3489 104.762 30.7652C119.608 30.4522 135.304 29.3906 149.783 27.461C160.217 26.0704 171.131 24.3525 179.242 21.0604C193.161 15.4101 172.506 10.8133 161.708 9.47452C137.84 6.5152 111.934 7.45133 86.887 9.82834' stroke='%237699EE' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A");
     background-repeat: no-repeat;
-    background-position: center 2rem;
-    background-size: contain;
+    background-position: center 2.5rem;
+    background-size: 50%;
   }
 
   @include sm-block {
     font-size: (25 / 16) + rem;
-    line-height: 2rem;
   }
 
   span {
@@ -143,9 +150,9 @@
 }
 
 .intro__title {
-  margin-top: (32 / 12) + rem;
+  margin-top: (32 / 16) + rem;
 
-  font-size: (25 / 12) + rem;
+  font-size: (25 / 16) + rem;
   font-weight: 700;
 
   @include from-to($md, $tb) {
@@ -153,23 +160,19 @@
   }
 
   @include md-block {
-    margin-top: (40 / 16) + rem;
-
     font-size: (45 / 16) + rem;
   }
 
   @include xl-block {
-    margin-top: (55 / 16) + rem;
-
     font-size: (55 / 16) + rem;
   }
 }
 
 .intro__text {
-  margin-top: (32 / 12) + rem;
+  margin-top: 1.5rem;
 
-  font-size: (14 / 12) + rem;
-  line-height: (18 / 12) + rem;
+  font-size: (14 / 16) + rem;
+  line-height: 1.75rem;
 
   @include to($md - 1px) {
     &::before {
@@ -179,7 +182,7 @@
       width: 4.5rem;
       height: 3px;
       margin-right: auto;
-      margin-bottom: 3rem;
+      margin-bottom: 1rem;
       margin-left: auto;
 
       border-radius: 3px;
@@ -188,18 +191,23 @@
     }
   }
 
-  @include tb-block {
-    margin-top: (48 / 16) + rem;
+  @include md-block {
+    font-size: 1rem;
+  }
 
+  @include from($tb + 1px) {
     font-size: (18 / 16) + rem;
-    line-height: 2rem;
   }
 }
 
 .intro__btn {
-  margin-top: (48 / 12) + rem;
+  margin-top: 2rem;
+
+  @include tb-block {
+    margin-top: 4rem;
+  }
 
   @include xl-block {
-    align-self: center;
+    margin-left: 4rem;
   }
 }

@@ -14,9 +14,12 @@
 <body>
 @@include("./components/header/header.html")
 <main>
+    @@include("./components/nav-dots/nav-dots.html")
     @@include("./components/intro/intro.html")
-    @@include("./components/services/services.html")
-    @@include("./components/overview/overview.html")
+   <section id="services">
+       @@include("./components/services/services.html")
+       @@include("./components/overview/overview.html")
+   </section>
     @@include("./components/steps/steps.html")
     @@include("./components/tabs/tabs.html")
     @@include("./components/advantages/advantages.html")

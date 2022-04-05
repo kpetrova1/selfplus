@@ -1,7 +1,7 @@
 .btn {
   display: inline-block;
-  min-width: (170 / 12) + rem;
-  height: (34 / 12) + rem;
+  min-width: (170 / 16) + rem;
+  height: (34 / 16) + rem;
 
   transition: background-color 0.5s ease-in-out;
 
@@ -9,9 +9,9 @@
   border-radius: (40 / 16) + rem;
 
   font-family: inherit;
-  font-size: (14 / 12) + rem;
+  font-size: (14 / 16) + rem;
   font-weight: 500;
-  line-height: (34 / 12) + rem;
+  line-height: (34 / 16) + rem;
 
   @include sm-block {
     min-width: (225 / 16) + rem;
@@ -21,7 +21,7 @@
     line-height: (45 / 16) + rem;
   }
 
-  @include tb-block {
+  @include from($tb + 1px) {
     min-width: (280 / 16) + rem;
     height: (56 / 16) + rem;
 
@@ -29,10 +29,10 @@
   }
 
   &--lg {
-    min-width: (170 / 12) + rem;
+    min-width: (170 / 16) + rem;
 
-    font-size: (14 / 12) + rem;
-    line-height: (34 / 12) + rem;
+    font-size: (14 / 16) + rem;
+    line-height: (34 / 16) + rem;
 
     @include sm-block {
       min-width: (310 / 16) + rem;
