@@ -12,15 +12,7 @@
 
   @include tb-block {
     display: block;
-    right: 5rem;
-  }
-
-  @include xl-block {
-    right: 8rem;
-  }
-
-  @media (min-width: 1500px) {
-    right: calc((100% - #{$xl}) / 2 + 2rem);
+    right: 3rem;
   }
 
   li + li {

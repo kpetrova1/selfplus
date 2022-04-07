@@ -67,7 +67,7 @@
 
 .advantages__box {
   @include md-block {
-    @include flex(flex, null, space-between);
+    @include flex(flex, null, null);
     padding: 4rem;
 
     border-radius: 10px;
@@ -78,12 +78,17 @@
 
   @include xl-block {
     padding: 2rem 4rem 4rem;
+    column-gap: 2rem;
   }
 }
 
 .advantages__item {
   @include to($md) {
     margin-bottom: 3rem;
+  }
+
+  @include md-block {
+    flex: 1;
   }
 }
 
