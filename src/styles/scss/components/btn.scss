@@ -1,7 +1,6 @@
 .btn {
   display: inline-block;
   min-width: (170 / 16) + rem;
-  height: (34 / 16) + rem;
 
   transition: background-color 0.5s ease-in-out;
 
@@ -9,24 +8,7 @@
   border-radius: (40 / 16) + rem;
 
   font-family: inherit;
-  font-size: (14 / 16) + rem;
   font-weight: 500;
-  line-height: (34 / 16) + rem;
-
-  @include sm-block {
-    min-width: (225 / 16) + rem;
-    height: (45 / 16) + rem;
-
-    font-size: 1rem;
-    line-height: (45 / 16) + rem;
-  }
-
-  @include from($tb + 1px) {
-    min-width: (280 / 16) + rem;
-    height: (56 / 16) + rem;
-
-    line-height: (56 / 16) + rem;
-  }
 
   &--lg {
     min-width: (170 / 16) + rem;
@@ -49,6 +31,44 @@
       font-size: 2rem;
 
       line-height: (76 / 16) + rem;
+    }
+  }
+
+  &--md {
+    height: (34 / 16) + rem;
+
+    font-size: (14 / 16) + rem;
+    line-height: (34 / 16) + rem;
+
+    @include sm-block {
+      min-width: (225 / 16) + rem;
+      height: (45 / 16) + rem;
+
+      font-size: 1rem;
+      line-height: (45 / 16) + rem;
+    }
+
+    @include from($tb + 1px) {
+      min-width: (280 / 16) + rem;
+      height: (56 / 16) + rem;
+
+      line-height: (56 / 16) + rem;
+    }
+  }
+
+  &--sm {
+    min-width: 100%;
+
+    font-size: 1rem;
+    line-height: (47 / 16) + rem;
+
+    @include md-block {
+      min-width: (225 / 16) + rem;
+    }
+
+    @include from($tb + 1px) {
+      font-size: 1rem;
+      line-height: (47 / 16) + rem;
     }
   }
 

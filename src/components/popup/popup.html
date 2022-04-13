@@ -1,0 +1,45 @@
+<div class="popup">
+  <div class="popup__backdrop"></div>
+  <div class="popup__box">
+    <img class="popup__bg" src="assets/popup-bg.jpg" alt="" />
+    <button class="popup__close" type="button">
+      <img src="assets/icons/cross.svg" alt="" />
+    </button>
+    <div class="popup__inner" style="display:none">
+      <h3 class="popup__title popup__title--underline">Let's keep in touch</h3>
+      <p class="popup__subtitle">Type in your e-mail, Instagram or Facebook ID</p>
+      <form class="popup__form">
+        <div class="field">
+          <label class="visually-hidden" for="username">@username</label>
+          <input class="field__input" id="username" type="email" placeholder="@username" />
+        </div>
+        <div class="popup__types">
+          <label class="radio" for="fb">
+            <input class="visually-hidden" id="fb" type="radio" name="type" checked />
+            <span class="radio__input"></span>
+            <img class="radio__img" src="assets/icons/fb.svg" alt="" />
+            <span class="radio__text">facebook</span>
+          </label>
+          <label class="radio" for="inst">
+            <input class="visually-hidden" id="inst" type="radio" name="type" />
+            <span class="radio__input"></span>
+            <img class="radio__img" src="assets/icons/inst.svg" alt="" />
+            <span class="radio__text">instagram</span>
+          </label>
+          <label class="radio" for="email">
+            <input class="visually-hidden" id="email" type="radio" name="type" />
+            <span class="radio__input"></span>
+            <img class="radio__img" src="assets/icons/mail.svg" alt="" />
+            <span class="radio__text">e-mail</span>
+          </label>
+        </div>
+        <button class="btn btn--primary btn--sm" type="submit">Submit</button>
+      </form>
+    </div>
+    <div class="popup__inner">
+      <h3 class="popup__title popup__title--success">Got It!</h3>
+      <p class="popup__subtitle">Awesome!<br>
+        We'll get back to you within the next 3 business days.</p>
+    </div>
+  </div>
+</div>

@@ -55,7 +55,7 @@
           </p>
       </div>
       <div class="intro__btn">
-        <button class="btn btn--primary in-view-watcher scale-in-center delay-4" type="button">Join now</button>
+        <button class="btn btn--primary btn--md in-view-watcher scale-in-center delay-4" type="button">Join now</button>
       </div>
     </div>
     <div class="intro__media intro__media--left in-view-watcher slide-in-right">
@@ -143,7 +143,7 @@
     </div>
   </div>
     <div class="steps__btn">
-        <button class="btn btn--primary in-view-watcher scale-in-center delay-4" type="button">Get started</button>
+        <button class="btn btn--primary btn--md in-view-watcher scale-in-center delay-4" type="button">Get started</button>
     </div>
 </section>
 
@@ -207,7 +207,7 @@
       </div>
     </div>
     <div class="tabs__btn">
-      <button class="btn btn--primary in-view-watcher scale-in-center delay-1" type="button">Get started</button>
+      <button class="btn btn--primary btn--md in-view-watcher scale-in-center delay-1" type="button">Get started</button>
     </div>
   </div>
 </section>
@@ -256,6 +256,52 @@
     <a class="link link--secondary link--lg" href="mailto:info@selfplus.com">info@selfplus.com</a>
   </div>
 </footer>
+
+<div class="popup">
+  <div class="popup__backdrop"></div>
+  <div class="popup__box">
+<picture><source srcset="assets/popup-bg.webp" type="image/webp"><source srcset="assets/popup-bg.jpg" type="image/jpeg"><img class="popup__bg" src="assets/popup-bg.jpg" alt="" /></picture>
+    <button class="popup__close" type="button">
+      <img src="assets/icons/cross.svg" alt="" />
+    </button>
+    <div class="popup__inner" style="display:none">
+      <h3 class="popup__title popup__title--underline">Let's keep in touch</h3>
+      <p class="popup__subtitle">Type in your e-mail, Instagram or Facebook ID</p>
+      <form class="popup__form">
+        <div class="field">
+          <label class="visually-hidden" for="username">@username</label>
+          <input class="field__input" id="username" type="email" placeholder="@username" />
+        </div>
+        <div class="popup__types">
+          <label class="radio" for="fb">
+            <input class="visually-hidden" id="fb" type="radio" name="type" checked />
+            <span class="radio__input"></span>
+            <img class="radio__img" src="assets/icons/fb.svg" alt="" />
+            <span class="radio__text">facebook</span>
+          </label>
+          <label class="radio" for="inst">
+            <input class="visually-hidden" id="inst" type="radio" name="type" />
+            <span class="radio__input"></span>
+            <img class="radio__img" src="assets/icons/inst.svg" alt="" />
+            <span class="radio__text">instagram</span>
+          </label>
+          <label class="radio" for="email">
+            <input class="visually-hidden" id="email" type="radio" name="type" />
+            <span class="radio__input"></span>
+            <img class="radio__img" src="assets/icons/mail.svg" alt="" />
+            <span class="radio__text">e-mail</span>
+          </label>
+        </div>
+        <button class="btn btn--primary btn--sm" type="submit">Submit</button>
+      </form>
+    </div>
+    <div class="popup__inner">
+      <h3 class="popup__title popup__title--success">Got It!</h3>
+      <p class="popup__subtitle">Awesome!<br>
+        We'll get back to you within the next 3 business days.</p>
+    </div>
+  </div>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="js/scripts.js"></script>
