@@ -25,6 +25,10 @@ body {
   @include md-block {
     font-size: 1rem;
   }
+
+  &.locked {
+    overflow: hidden;
+  }
 }
 
 p,

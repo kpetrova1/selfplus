@@ -17,6 +17,17 @@ $(document).ready(function () {
     }
   });
 
+  $('.open-popup-btn').on('click', function () {
+    $('.popup').removeAttr('hidden');
+    $('body').addClass('locked');
+  });
+
+  $('.close-popup').on('click', function () {
+    $('.popup').attr('hidden', true);
+    $('body').removeClass('locked');
+  });
+
+
   let contentSections = $('section'),
     navigationItems = $('.nav-dots a');
 
