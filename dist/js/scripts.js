@@ -62,6 +62,14 @@ $(document).ready(function () {
       $(this).siblings('.tab__body').slideDown(200);
     }
   });
+  $('.open-popup-btn').on('click', function () {
+    $('.popup').removeAttr('hidden');
+    $('body').addClass('locked');
+  });
+  $('.close-popup').on('click', function () {
+    $('.popup').attr('hidden', true);
+    $('body').removeClass('locked');
+  });
   var contentSections = $('section'),
       navigationItems = $('.nav-dots a');
   updateNavigation();
