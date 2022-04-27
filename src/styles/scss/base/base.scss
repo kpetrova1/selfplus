@@ -68,3 +68,9 @@ section {
 
   clip-path: inset(50%);
 }
+
+main {
+  @include sm-block {
+    margin-top: -5rem;
+  }
+}

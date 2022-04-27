@@ -611,17 +611,8 @@ section {
 
 .header {
   display: none;
-  position: fixed;
-  z-index: 10;
-  top: 0;
-  right: 0;
-  left: 0;
-}
-
-.header__container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  position: relative;
+  z-index: 1;
   padding-top: 2.5rem;
 }
 
@@ -1089,6 +1080,10 @@ section {
 }
 
 @media screen and (min-width: 676px) {
+  main {
+    margin-top: -5rem;
+  }
+
   .btn--lg {
     min-width: 19.375rem;
     height: 4rem;
@@ -1104,7 +1099,9 @@ section {
   }
 
   .header {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .intro__slogan {

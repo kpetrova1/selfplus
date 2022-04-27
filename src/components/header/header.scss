@@ -1,17 +1,10 @@
 .header {
   display: none;
-  position: fixed;
-  z-index: 10;
-  top: 0;
-  right: 0;
-  left: 0;
+  position: relative;
+  z-index: 1;
+  padding-top: 2.5rem;
 
   @include sm-block {
-    display: block;
-  }
-
-  &__container {
     @include flex(flex, center, space-between);
-    padding-top: 2.5rem;
   }
 }
