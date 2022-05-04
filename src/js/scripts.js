@@ -27,6 +27,14 @@ $(document).ready(function () {
     $('body').removeClass('locked');
   });
 
+  $("input[name='join-type']").change(function(e){
+    const btn = e.currentTarget;
+    if ($(btn).attr('id') === 'email') {
+      $("#username").attr('placeholder', 'me@example.com')
+    } else {
+      $("#username").attr('placeholder', '@username')
+    }
+  });
 
   let contentSections = $('section'),
     navigationItems = $('.nav-dots a');
@@ -45,8 +53,8 @@ $(document).ready(function () {
     contentSections.each(function () {
       let activeSection = $('.nav-dots a[href="#' + $(this).attr('id') + '"]').data('number') - 1;
       if (
-        $(this).offset().top - $(window).height() / 2 < $(window).scrollTop() &&
-        $(this).offset().top + $(this).height() - $(window).height() / 2 > $(window).scrollTop()
+        $(this).offset().top - $(window).height() / 4 < $(window).scrollTop() &&
+        $(this).offset().top + $(this).height() - $(window).height() / 4 > $(window).scrollTop()
       ) {
         navigationItems.eq(activeSection).addClass('nav-dots__item--selected');
       } else {
