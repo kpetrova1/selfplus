@@ -1060,6 +1060,11 @@ section {
   font-size: 1rem;
 }
 
+.popup__subtitle.error {
+  margin-top: 1rem;
+  color: red;
+}
+
 .popup__form {
   margin-top: 1.5rem;
 }

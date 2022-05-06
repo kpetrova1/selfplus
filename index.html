@@ -262,38 +262,41 @@
     <button class="popup__close close-popup" type="button">
       <img src="assets/icons/cross.svg" alt="" />
     </button>
-    <div class="popup__inner">
+    <div class="popup__inner form">
       <h3 class="popup__title popup__title--underline">Let's keep in touch</h3>
       <p class="popup__subtitle">Type in your e-mail, Instagram or Facebook ID</p>
-      <form class="popup__form">
+      <form action="https://ceuacvnyoab2l4swz6s6muc73q0fysgy.lambda-url.us-east-1.on.aws/" class="popup__form">
         <div class="field">
           <label class="visually-hidden" for="username">@username</label>
-          <input class="field__input" id="username" type="text" placeholder="@username" />
+          <input class="field__input" required id="username" name="Input" type="text" placeholder="@username" />
         </div>
         <div class="popup__types">
           <label class="radio" for="fb">
-            <input class="visually-hidden" id="fb" type="radio" name="join-type" checked />
+            <input class="visually-hidden" id="fb" value="fb" type="radio" name="Type" checked />
             <span class="radio__input"></span>
             <img class="radio__img" src="assets/icons/fb.svg" alt="" />
             <span class="radio__text">facebook</span>
           </label>
           <label class="radio" for="inst">
-            <input class="visually-hidden" id="inst" type="radio" name="join-type" />
+            <input class="visually-hidden" id="inst" value="inst" type="radio" name="Type" />
             <span class="radio__input"></span>
             <img class="radio__img" src="assets/icons/inst.svg" alt="" />
             <span class="radio__text">instagram</span>
           </label>
           <label class="radio" for="email">
-            <input class="visually-hidden" id="email" type="radio" name="join-type" />
+            <input class="visually-hidden" id="email" value="email" type="radio" name="Type" />
             <span class="radio__input"></span>
             <img class="radio__img" src="assets/icons/mail.svg" alt="" />
             <span class="radio__text">e-mail</span>
           </label>
         </div>
         <button class="btn btn--primary btn--sm" type="submit">Submit</button>
+        <p class="popup__subtitle error" hidden>
+          Something went wrong. Please try again later.
+        </p>
       </form>
     </div>
-    <div class="popup__inner" hidden>
+    <div class="popup__inner result" hidden>
       <h3 class="popup__title popup__title--success">Got It!</h3>
       <p class="popup__subtitle">Awesome!<br>
         We'll get back to you within the next 3 business days.</p>

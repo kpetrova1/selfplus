@@ -46,7 +46,14 @@
 /* harmony import */ var _inView_jquery_min__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_inView_jquery_min__WEBPACK_IMPORTED_MODULE_0__);
 
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+var FORM_PENDING_TEXT = 'Please wait...';
 $(document).ready(function () {
   $('.tab__btn').on('click', function () {
     if ($(this).parent().hasClass('tab--active')) {
@@ -65,18 +72,60 @@ $(document).ready(function () {
   $('.open-popup-btn').on('click', function () {
     $('.popup').removeAttr('hidden');
     $('body').addClass('locked');
+    $('.popup__inner.result').attr('hidden', true);
+    $('.popup__inner.form').removeAttr('hidden');
   });
   $('.close-popup').on('click', function () {
     $('.popup').attr('hidden', true);
     $('body').removeClass('locked');
   });
-  $("input[name='join-type']").change(function (e) {
+  $("input[name='Type']").change(function (e) {
     var btn = e.currentTarget;
 
     if ($(btn).attr('id') === 'email') {
       $("#username").attr('placeholder', 'me@example.com');
     } else {
       $("#username").attr('placeholder', '@username');
+    }
+  }); // Send data
+
+  $('form.popup__form').submit(function (e) {
+    e.preventDefault();
+    var form = $(this);
+    var url = form.attr('action');
+
+    if (url) {
+      var btn = form.find('button[type=submit]');
+      var errorMsg = form.find('.popup__subtitle.error');
+      var formWrap = $('.popup__inner.form');
+      var result = $('.popup__inner.result');
+      var btnText = btn.text();
+      var fields = form.serializeArray().reduce(function (acc, _ref) {
+        var name = _ref.name,
+            value = _ref.value;
+        return _objectSpread(_objectSpread({}, acc), {}, _defineProperty({}, name, value));
+      }, {});
+      fields['Date'] = new Date().toISOString();
+      btn.text(FORM_PENDING_TEXT);
+      errorMsg.attr('hidden', true);
+      fetch(url, {
+        method: 'POST',
+        body: JSON.stringify([{
+          fields: fields
+        }])
+      }).then(function (r) {
+        return r.json();
+      }).then(function (data) {
+        if (data.success) {
+          formWrap.attr('hidden', true);
+          result.removeAttr('hidden');
+        } else {
+          console.error(data.err);
+          errorMsg.removeAttr('hidden');
+        }
+      })["finally"](function () {
+        btn.text(btnText);
+      });
     }
   });
   var contentSections = $('section'),
