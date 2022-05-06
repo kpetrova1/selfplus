@@ -114,6 +114,11 @@
   @include md-block {
     font-size: (19 / 16) + rem;
   }
+
+  &.error {
+    margin-top: 1rem;
+    color: red;
+  }
 }
 
 .popup__form {
