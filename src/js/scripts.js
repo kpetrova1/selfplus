@@ -1,6 +1,8 @@
 'use strict';
 import './inView.jquery.min';
 
+const FORM_PENDING_TEXT = 'Please wait...'
+
 $(document).ready(function () {
   $('.tab__btn').on('click', function () {
     if ($(this).parent().hasClass('tab--active')) {
@@ -20,6 +22,8 @@ $(document).ready(function () {
   $('.open-popup-btn').on('click', function () {
     $('.popup').removeAttr('hidden');
     $('body').addClass('locked');
+    $('.popup__inner.result').attr('hidden', true);
+    $('.popup__inner.form').removeAttr('hidden');
   });
 
   $('.close-popup').on('click', function () {
@@ -27,13 +31,54 @@ $(document).ready(function () {
     $('body').removeClass('locked');
   });
 
-  $("input[name='join-type']").change(function(e){
+  $("input[name='Type']").change(function(e){
     const btn = e.currentTarget;
     if ($(btn).attr('id') === 'email') {
       $("#username").attr('placeholder', 'me@example.com')
     } else {
       $("#username").attr('placeholder', '@username')
     }
+  });
+
+  // Send data
+  $('form.popup__form').submit(function (e) {
+    e.preventDefault();
+    const form = $(this);
+    const url = form.attr('action');
+    if (url) {
+      const btn = form.find('button[type=submit]');
+      const errorMsg = form.find('.popup__subtitle.error');
+      const formWrap = $('.popup__inner.form');
+      const result = $('.popup__inner.result');
+      const btnText = btn.text();
+      const fields = form.serializeArray().reduce(
+        (acc, {name,value}) =>({...acc,[name]:value}),
+        {},
+      );
+      fields['Date'] = new Date().toISOString();
+
+      btn.text(FORM_PENDING_TEXT);
+      errorMsg.attr('hidden', true);
+
+      fetch(url, {
+        method: 'POST',
+        body: JSON.stringify([{fields}]),
+      })
+        .then(r => r.json())
+        .then((data) => {
+          if (data.success) {
+            formWrap.attr('hidden', true);
+            result.removeAttr('hidden');
+          } else {
+            console.error(data.err);
+            errorMsg.removeAttr('hidden');
+          }
+        })
+        .finally(() => {
+          btn.text(btnText);
+        });
+    }
+
   });
 
   let contentSections = $('section'),
