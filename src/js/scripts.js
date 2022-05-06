@@ -40,12 +40,14 @@ $(document).ready(function () {
     }
   });
 
+  let isFormPending = false;
+
   // Send data
   $('form.popup__form').submit(function (e) {
     e.preventDefault();
     const form = $(this);
     const url = form.attr('action');
-    if (url) {
+    if (url && !isFormPending) {
       const btn = form.find('button[type=submit]');
       const errorMsg = form.find('.popup__subtitle.error');
       const formWrap = $('.popup__inner.form');
@@ -58,7 +60,9 @@ $(document).ready(function () {
       fields['Date'] = new Date().toISOString();
 
       btn.text(FORM_PENDING_TEXT);
+      btn.attr('disabled', true);
       errorMsg.attr('hidden', true);
+      isFormPending = true;
 
       fetch(url, {
         method: 'POST',
@@ -75,7 +79,9 @@ $(document).ready(function () {
           }
         })
         .finally(() => {
+          isFormPending = false;
           btn.text(btnText);
+          btn.removeAttr('disabled');
         });
     }
 
