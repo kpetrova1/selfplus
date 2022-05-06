@@ -87,14 +87,15 @@ $(document).ready(function () {
     } else {
       $("#username").attr('placeholder', '@username');
     }
-  }); // Send data
+  });
+  var isFormPending = false; // Send data
 
   $('form.popup__form').submit(function (e) {
     e.preventDefault();
     var form = $(this);
     var url = form.attr('action');
 
-    if (url) {
+    if (url && !isFormPending) {
       var btn = form.find('button[type=submit]');
       var errorMsg = form.find('.popup__subtitle.error');
       var formWrap = $('.popup__inner.form');
@@ -107,7 +108,9 @@ $(document).ready(function () {
       }, {});
       fields['Date'] = new Date().toISOString();
       btn.text(FORM_PENDING_TEXT);
+      btn.attr('disabled', true);
       errorMsg.attr('hidden', true);
+      isFormPending = true;
       fetch(url, {
         method: 'POST',
         body: JSON.stringify([{
@@ -124,7 +127,9 @@ $(document).ready(function () {
           errorMsg.removeAttr('hidden');
         }
       })["finally"](function () {
+        isFormPending = false;
         btn.text(btnText);
+        btn.removeAttr('disabled');
       });
     }
   });
